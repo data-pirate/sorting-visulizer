@@ -14,23 +14,48 @@
             <h1>Sorting Visualizer</h1>
             <div class="buttons">
                 <div class="new-array-button">
-                    <button class="algo-button new-array" id="new-array">New Array</button>
+                    <button class="new-array" id="new-array">New Array</button>
                 </div>
                 <div class="sorting-algos-button">
-                    <button class="algo-button">Bubble Sort</button>
-                    <button class="algo-button">Merge Sort</button>
-                    <button class="algo-button">Selection Sort</button>
-                    <button class="algo-button">Insertion Sort</button>
-                    <button class="algo-button">Quick Sort</button>
+                    <button class="algo-button" id="bubble-sort">Bubble Sort</button>
+                    <button class="algo-button" id="merge-sort">Merge Sort</button>
+                    <button class="algo-button" id="selection-sort">Selection Sort</button>
+                    <button class="algo-button" id="insertion-sort">Insertion Sort</button>
+                    <button class="algo-button" id="quick-sort">Quick Sort</button>
                 </div>
             </div>
         </header>
 
+        <section>
+            <label for="slider">algorithm speed</label>
+            <input type="range" name="slider" id="slider" min="10" max="100">
+        </section>
+
         <main class="bars" id="bars">
 
         </main>
+        <section>
+            <div class="info">
+                <div class="colors" id="pivot">
+                    <div class="pivot colored-box"></div>
+                    pivot
+                </div>
+                <div class="colors">
+                    <div class="swap-node colored-box"></div>
+                    <div class="swap-node2 colored-box"></div>
+                    swap nodes
+                </div>
+                <div class="colors">
+                    <div class="sorted colored-box"></div>
+                    sorted
+                </div>
+            </div>
+        </section>
     </div>
 
-    <script src="js/script.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/mergeSort.js"></script>
+    <script type="module" src="./js/util.js"></script>
+    <script type="module" src="./js/quickSort.js"></script>
 </body>
 </html>

@@ -44,6 +44,12 @@
     cursor: pointer;
 }
 
+
+.algo-button:disabled{
+    cursor: not-allowed;
+    background: rgb(212, 126, 126);
+}
+
 .bars{
     width: 80%;
     margin: 0 10%;
@@ -52,9 +58,47 @@
 }
 
 .bar{
-    background-color: yellow;
-    width: 0.8%;
-    margin: 0 0.2%;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    background-color: cyan;
+    box-sizing: border-box;
+    width: 1%;
+    border: 1px solid black;
+}
+
+.info{
+    margin: 2em;
+}
+
+.colored-box{
+    margin: 0 1.2em;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+}
+
+.pivot{
+    background: black;
+}
+
+.swap-node{
+    background: orange;
+}
+
+.swap-node2{
+    margin-left: 0;
+    background: red;
+}
+
+.sorted{
+    background: green;
+}
+
+.colors{
+    display: flex;
+    margin: 0.8em;
+    font-weight: bold;
+}
+
+#pivot{
+    display: none;
+
 }

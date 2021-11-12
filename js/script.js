@@ -1,3 +1,7 @@
+import { swap, delay, speed } from './util.js';
+import quickSort from './quickSort.js'
+// const { swap } = require('./util.js')
+
 let arr = [];
 function makeArray(){
     let arr = [];
@@ -9,8 +13,7 @@ function makeArray(){
 }
 
 const bars = document.getElementById("bars");
-function makeBars(){
-    arr = makeArray();
+function makeBars(arr){
     while(bars.firstChild){
         bars.removeChild(bars.firstChild);
     }
@@ -18,47 +21,42 @@ function makeBars(){
         const element = document.createElement("div");
         element.classList.add("bar");
         element.style.height = `${arr[i]}%`
+        element.style.width = bars.offsetWidth / arr.length;
         bars.appendChild(element);
     }
 }
 
 
-const newArrayButton = document.getElementById("new-array");
-newArrayButton.addEventListener('click', makeBars);
-
-function swap(element1, element2){
-    // const style1 = window.getComputedStyle(element1);
-    // const style2 = window.getComputedStyle(element2);
-
-    const transform1 = element1.style.height;
-    const transform2 = element2.style.height;
-
-    element1.style.height = transform2;
-    element2.style.height = transform1;
-}
-
-async function bubbleSort(){
-    const allElements = document.querySelectorAll(".bar");
-
-    for(let i = 0; i < arr.length; i++){
-        for(let j = i + 1; j < arr.length; j++){
-            let el1 = Number(allElements[i].style.height.split("%")[0]);
-            let el2 = Number(allElements[j].style.height.split("%")[0]);
-            allElements[i].style.background = "red";
-            allElements[j].style.background = "red";
-            if(el1 > el2){
-                swap(allElements[i], allElements[j]);
-                await new Promise(resolve => setTimeout(() => {resolve(), 1000}));
-            }
-            allElements[i].style.background = "yellow";
-            allElements[j].style.background = "yellow";
-        }
+const navBar = document.querySelector(".navbar");
+navBar.addEventListener('click', async (e) => {
+    if(e.target.id === 'new-array'){
+        arr = makeArray();
+        makeBars(arr);
+    }else if(e.target.id === 'bubble-sort'){
+        let allElements = document.querySelectorAll(".bar");
+        await bubbleSort(allElements);
     }
+});
 
-    console.log("sorted");
+
+arr = makeArray();
+makeBars(arr);
+
+
+async function bubbleSort(arr){
+    const len = arr.length;
+    for(let i = 0; i < len; i++){
+        for(let j = 0; j < len - i - 1; j++){
+            let el1 = parseInt(arr[j].style.height)
+            let el2 = parseInt(arr[j + 1].style.height)
+            if(el1 > el2){
+                await swap(arr[j], arr[j + 1]);
+            }
+            arr[j].style.background = "lightgreen";
+            arr[j + 1].style.background = "lightgreen";
+        }
+        arr[len - i - 1].style.background = "green";
+    }
 }
 
 
-
-makeBars();
-bubbleSort();
