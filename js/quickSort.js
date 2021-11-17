@@ -1,4 +1,4 @@
-import { swap } from "./util.js";
+import { disableButtons, enableButtons, swap } from "./util.js";
 
 async function partition(arr, start, end){
     arr[end].style.background = "black";
@@ -36,6 +36,7 @@ document.getElementById("quick-sort").addEventListener('click', async (e)=>{
     const allElements = document.querySelectorAll(".bar");
     const pivot = document.getElementById("pivot");
     pivot.style.display = "flex";
+    disableButtons();
     await quickSort(allElements, 0, allElements.length - 1);
-
+    enableButtons();
 })

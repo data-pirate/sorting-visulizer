@@ -1,6 +1,3 @@
-import { swap, delay, speed } from './util.js';
-import quickSort from './quickSort.js'
-// const { swap } = require('./util.js')
 
 let arr = [];
 function makeArray(){
@@ -32,9 +29,6 @@ navBar.addEventListener('click', async (e) => {
     if(e.target.id === 'new-array'){
         arr = makeArray();
         makeBars(arr);
-    }else if(e.target.id === 'bubble-sort'){
-        let allElements = document.querySelectorAll(".bar");
-        await bubbleSort(allElements);
     }
 });
 
@@ -43,20 +37,13 @@ arr = makeArray();
 makeBars(arr);
 
 
-async function bubbleSort(arr){
-    const len = arr.length;
-    for(let i = 0; i < len; i++){
-        for(let j = 0; j < len - i - 1; j++){
-            let el1 = parseInt(arr[j].style.height)
-            let el2 = parseInt(arr[j + 1].style.height)
-            if(el1 > el2){
-                await swap(arr[j], arr[j + 1]);
-            }
-            arr[j].style.background = "lightgreen";
-            arr[j + 1].style.background = "lightgreen";
-        }
-        arr[len - i - 1].style.background = "green";
+document.getElementById('input-new-array').addEventListener('click', (e) => {
+    console.log('here in lsite')
+    let arrBox = document.getElementById('array-box');
+    console.log(window.getComputedStyle(arrBox).visibility);
+    if(arrBox.style.display === "none"){
+        arrBox.style.display = "block"
+    }else{
+        arrBox.style.display = "none"
     }
-}
-
-
+});

@@ -1,4 +1,4 @@
-import { speed, delay, hidePivot, enableButtons, disableButtons } from './util.js';
+import { speed, delay, hidePivot, enableButtons, disableButtons, fillAll } from './util.js';
 
 async function merge(arr, low, mid, high){
     
@@ -27,7 +27,7 @@ async function merge(arr, low, mid, high){
         if(parseInt(left[i]) < parseInt(right[j])){
             await delay(speed);
             if((n + m) === arr.length){
-                arr[k].style.background = 'green';
+                arr[k].style.background = 'limegreen';
             }else{
                 arr[k].style.background = "lightgreen";
             }
@@ -37,7 +37,7 @@ async function merge(arr, low, mid, high){
         }else{
             await delay(speed);
             if((n + m) === arr.length){
-                arr[k].style.background = 'green';
+                arr[k].style.background = 'limegreen';
             }else{
                 arr[k].style.background = "lightgreen";
             }
@@ -52,7 +52,7 @@ async function merge(arr, low, mid, high){
     while(i < n){
         await delay(speed);
         if((n + m) === arr.length){
-            arr[k].style.background = 'green';
+            arr[k].style.background = 'limegreen';
         }else{
             arr[k].style.background = "lightgreen";
         }
@@ -66,7 +66,7 @@ async function merge(arr, low, mid, high){
     while(j < m){
         await delay(speed);
         if((n + m) === arr.length){
-            arr[k].style.background = 'green';
+            arr[k].style.background = 'limegreen';
         }else{
             arr[k].style.background = "lightgreen";
         }
@@ -88,6 +88,7 @@ async function mergeSort(arr, start, end){
     await mergeSort(arr, start, mid);
     await mergeSort(arr, mid + 1, end);
     await merge(arr, start, mid, end);
+
 }
 
 
@@ -96,5 +97,6 @@ document.getElementById("merge-sort").addEventListener('click', async (e)=>{
     hidePivot();
     disableButtons();
     await mergeSort(allElements, 0, allElements.length - 1);
+    await fillAll(allElements);
     enableButtons();
 })

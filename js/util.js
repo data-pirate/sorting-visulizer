@@ -10,7 +10,6 @@ async function swap(element1, element2){
 
     element1.style.background = "orange";
     element2.style.background = "red";
-
     await delay(speed);
 }
 
@@ -45,4 +44,11 @@ function enableButtons(){
 
 
 
-export {swap, speed, delay, hidePivot, enableButtons, disableButtons};
+async function fillAll(arr){
+    for(let i = 0; i < arr.length; i++){
+        await delay(20);
+        arr[i].style.background = "green";
+    }
+}
+
+export {swap, speed, delay, hidePivot, enableButtons, disableButtons, fillAll};

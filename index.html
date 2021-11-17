@@ -11,10 +11,12 @@
 
     <div class="container">
         <header class="navbar">
-            <h1>Sorting Visualizer</h1>
+            <h1 class="title">Sorting Visualizer</h1>
             <div class="buttons">
-                <div class="new-array-button">
+                <div class="new-array-buttons">
                     <button class="new-array" id="new-array">New Array</button>
+                    <button class="new-array" id="input-new-array">Input Array</button>
+                    <input hidden id="array-box" type="text">
                 </div>
                 <div class="sorting-algos-button">
                     <button class="algo-button" id="bubble-sort">Bubble Sort</button>
@@ -26,8 +28,8 @@
             </div>
         </header>
 
-        <section>
-            <label for="slider">algorithm speed</label>
+        <section class="algo-speed">
+            <label for="slider">Algorithm speed</label>
             <input type="range" name="slider" id="slider" min="10" max="100">
         </section>
 
@@ -55,7 +57,10 @@
 
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/mergeSort.js"></script>
-    <script type="module" src="./js/util.js"></script>
-    <script type="module" src="./js/quickSort.js"></script>
+    <script type="module" src="js/bubbleSort.js"></script>
+    <script type="module" src="js/selectionSort.js"></script>
+    <script type="module" src="js/insertionSort.js"></script>
+    <script type="module" src="js/util.js"></script>
+    <script type="module" src="js/quickSort.js"></script>
 </body>
 </html>
