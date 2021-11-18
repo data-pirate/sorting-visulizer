@@ -1,4 +1,4 @@
-import { swap, delay, speed, hidePivot, disableButtons, enableButtons, fillAll } from './util.js';
+import { delay, speed, hidePivot, disableButtons, enableButtons, fillAll } from './util.js';
 
 
 async function insertionSort(arr){
@@ -19,6 +19,7 @@ async function insertionSort(arr){
             }
 
         }
+        arr[j + 1].style.background = "orange";
         arr[j + 1].style.height = key;
         arr[i].style.background = "limegreen";
     }

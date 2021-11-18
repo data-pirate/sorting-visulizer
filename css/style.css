@@ -5,10 +5,9 @@
 }
 
 .container{
-    width: 100vw;
+    max-width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
-    box-sizing: border-box;
 }
 
 .title{
@@ -68,11 +67,11 @@
 .bar{
     background-color: cyan;
     box-sizing: border-box;
-    width: 1%;
     border: 1px solid black;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    transition: height 0.2s ease-in-out;
+    max-height: 100%;
+    transition: height 0.3s ease-in-out;
 }
 
 .info{
@@ -102,6 +101,10 @@
 
 .sorted{
     background: green;
+}
+
+.part-sorted{
+    background: limegreen;
 }
 
 .colors{
@@ -153,4 +156,32 @@
 
 .show{
     display: block;
+}
+
+
+.array-box{
+    display: none;
+    position: absolute;
+    margin-top: 4em;
+    height: 2.5em;
+    width: 20%;
+    left: 10%;
+}
+
+.new-input-array-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.skip{
+    position: absolute;
+    right: 2em;
+    width: 5em;
+    height: 2.5em;
+    border-radius: 8px;
+    background: lime;
+    font-weight: bold;
 }

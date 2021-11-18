@@ -15,8 +15,10 @@
             <div class="buttons">
                 <div class="new-array-buttons">
                     <button class="new-array" id="new-array">New Array</button>
-                    <button class="new-array" id="input-new-array">Input Array</button>
-                    <input hidden id="array-box" type="text">
+                    <div class="new-input-array-box">
+                        <button class="new-array" id="input-new-array">Input Array</button>
+                        <input class="array-box" id="array-box" type="text" placeholder="2 3 4 5... seprate with spaces">
+                    </div>
                 </div>
                 <div class="sorting-algos-button">
                     <button class="algo-button" id="bubble-sort">Bubble Sort</button>
@@ -50,6 +52,10 @@
                 <div class="colors">
                     <div class="sorted colored-box"></div>
                     sorted
+                </div>
+                <div class="colors">
+                    <div class="part-sorted colored-box"></div>
+                    partially sorted
                 </div>
             </div>
         </section>

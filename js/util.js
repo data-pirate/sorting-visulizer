@@ -20,7 +20,7 @@ speedBar.addEventListener('change', (e)=>{
 });
 
 async function delay(time){
-    return new Promise(resolve => setTimeout(() => {resolve('')}, 100 - speed));
+    return new Promise(resolve => setTimeout(() => {resolve('')}, 100 - Number(time)));
 }
 
 
@@ -50,5 +50,6 @@ async function fillAll(arr){
         arr[i].style.background = "green";
     }
 }
+
 
 export {swap, speed, delay, hidePivot, enableButtons, disableButtons, fillAll};
